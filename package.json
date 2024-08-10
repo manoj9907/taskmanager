@@ -9,7 +9,7 @@
     "start:watch": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "manojkumar",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
