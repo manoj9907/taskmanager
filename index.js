@@ -10,7 +10,7 @@ dotenv.config();
 
 const dbConfig = require("./config/database.config");
 const port = process.env.PORT;
-console.log("sss", process.env);
+// console.log("sss", process.env);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
