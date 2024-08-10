@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "0b2177ac-9b78-4266-831c-28cbd3fb7c86",
+		"name": "Task Management System",
+		"description": "Postman collection for Task Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24904084"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"tess\",\n    \"password\": \"password123\",\n    \"email\":\"userq@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "{{live_url}}/api/user/signup",
+					"host": [
+						"{{live_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"userq@gmail.com\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "{{live_url}}/api/user/login",
+					"host": [
+						"{{live_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmI2ZjhhMDcxZjcyODAxN2RiYzc5ZGUiLCJpYXQiOjE3MjMyNjc1NTUsImV4cCI6MTcyMzI3MTE1NX0.YKRxOGDsE-SWCHl4p-hDm5iBsdIS_rGx5AoGDMoRYoU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \" new user Complete Node.js Projectqwdqq1\",\n    \"description\": \"Finish the task management system project\"\n    // \"completed\": false\n}"
+				},
+				"url": {
+					"raw": "{{live_url}}/api/user/create-task",
+					"host": [
+						"{{live_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"create-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmI2ZjhhMDcxZjcyODAxN2RiYzc5ZGUiLCJpYXQiOjE3MjMyNjc1NTUsImV4cCI6MTcyMzI3MTE1NX0.YKRxOGDsE-SWCHl4p-hDm5iBsdIS_rGx5AoGDMoRYoU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{live_url}}/api/user/tasks",
+					"host": [
+						"{{live_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmI2ZjhhMDcxZjcyODAxN2RiYzc5ZGUiLCJpYXQiOjE3MjMyNjc1NTUsImV4cCI6MTcyMzI3MTE1NX0.YKRxOGDsE-SWCHl4p-hDm5iBsdIS_rGx5AoGDMoRYoU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"texccccstwwwwee\",\n    \"completed\": true\n}"
+				},
+				"url": {
+					"raw": "{{live_url}}/api/user/tasks/66b6fa9971f728017dbc79f0",
+					"host": [
+						"{{live_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"tasks",
+						"66b6fa9971f728017dbc79f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmI1ZGY1ZDVjNDIxMjFlZDQ5NjcwMjYiLCJpYXQiOjE3MjMyMDgxMTEsImV4cCI6MTcyMzIxMTcxMX0.zD8IlYbUOnE_ZjdCpTfKz8MfpQpiQZSYTZEpk7BSJak",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/user/tasks/66b600f9c9a99dd64ca77771",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"tasks",
+						"66b600f9c9a99dd64ca77771"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "jwt_token",
+			"value": ""
+		},
+		{
+			"key": "task_id",
+			"value": ""
+		},
+		{
+			"key": "live_url",
+			"value": "https://taskmanager-066i.onrender.com",
+			"type": "string"
+		}
+	]
+}
